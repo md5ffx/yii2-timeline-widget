@@ -7,7 +7,7 @@
         <?php for($i = 0; $i < count($history); $i++) : ?>
             <?php if($history[$i]['date'] != $date) : $date = $history[$i]['date'];?>
                 <li class="time-label">
-                    <span class="bg-blue"><?=$history[$i]['date']?></span>
+                    <span class="bg-blue"><i class="fa fa-circle" style="margin-right: 12px;"></i> <?=$history[$i]['date']?></span>
                 </li>
             <?php endif;?>
             <li>
@@ -19,7 +19,6 @@
                     $icon_color = (isset($history[$i]['icon_color'])) ? $history[$i]['icon_color'] : (($i==count($history)-1 && $different_last_icon) ? $last_icon_color : $icon_color);
                     $icon_font_color = (isset($history[$i]['icon_font_color'])) ? $history[$i]['icon_font_color'] : (($i==count($history)-1 && $different_last_icon) ? $last_icon_font_color : $icon_font_color);
                 ?>
-                <i class="<?=$icon?>" style="background-color: <?=$icon_color?>; color: <?=$icon_font_color?>"></i>
                 <div class="timeline-item <?=($collapsible) ? 'collapsible' : ''?>">
                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?=$history[$i]['time']?></span>
                     <?php if(isset($history[$i]['subtitle'])): ?>
